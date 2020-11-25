@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: es
+  data:
+    elasticsearch:
+      cluster-name: 'dianping-app'
+      cluster-nodes: 127.0.0.1:9200,127.0.0.1:9201,127.0.0.1:9202
