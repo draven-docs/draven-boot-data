@@ -1,7 +1,6 @@
 package com.noxus.draven.data.hibernate.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.id.*;
 
@@ -15,8 +14,6 @@ import java.util.Map;
 
 @Entity
 @Table
-@Data
-@AllArgsConstructor
 public class Person {
 
     private static final Map GENERATORS = new HashMap<>();
@@ -71,6 +68,51 @@ public class Person {
 
     private String address;
 
+
+    public Person(String id, String firstname, String lastname, String address) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+    }
+
     public Person() {
+
+    }
+
+    public static Map getGENERATORS() {
+        return GENERATORS;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
