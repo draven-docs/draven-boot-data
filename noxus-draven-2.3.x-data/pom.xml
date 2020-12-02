@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.6.RELEASE</version>
+    </parent>
+
+    <modules>
+        <module>noxus-draven-2.3.x-data-neo4j</module>
+    </modules>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <name>noxus-draven-2.3.x-data</name>
+
+    <groupId>com.noxus.draven.data</groupId>
+    <artifactId>noxus-draven-2.3.x-data</artifactId>
+    <version>Draven.2.3.0</version>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <mysql.version>8.0.15</mysql.version>
+        <lombok.version>1.18.10</lombok.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.noxus.draven.ThreeApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+   <repositories>
+       <!--   <repository>
+             <id>aliyun-repos</id>
+             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+             <snapshots>
+                 <enabled>false</enabled>
+             </snapshots>
+         </repository>-->
+
+      <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
+</project>

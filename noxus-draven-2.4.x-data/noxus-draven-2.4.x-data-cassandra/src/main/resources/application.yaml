@@ -1,0 +1,8 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: demo
+      contact-points: 127.0.0.1:9042
+      local-datacenter: datacenter1
+      # 生成策略
+      #schema-action: create_if_not_exists
